@@ -4,5 +4,5 @@ The App for Everyone
 
 ## Getting Started
 
-Starting Point....
+This app is strictly focused towards giving restuarants more benefit in their off time and provide customers with different,attractive deals..
 
