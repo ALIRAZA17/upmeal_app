@@ -1,23 +1,34 @@
 import 'package:flutter/material.dart';
 
 class TextFieldInput extends StatelessWidget {
-  const TextFieldInput({super.key});
-
+  final bool isPass;
+  final String labelText;
+  final TextInputType textInputType;
+  final Icon prefixIcon;
+  const TextFieldInput({
+    super.key,
+    this.isPass = false,
+    required this.labelText,
+    required this.textInputType,
+    required this.prefixIcon,
+  });
   @override
   Widget build(BuildContext context) {
-    return const TextField(
+    return TextField(
       decoration: InputDecoration(
         prefixIcon: Padding(
-          padding: EdgeInsets.only(right: 20),
-          child: Icon(Icons.email),
+          padding: const EdgeInsets.only(right: 20),
+          child: prefixIcon,
         ),
-        labelText: 'Email',
-        labelStyle: TextStyle(
+        labelText: labelText,
+        labelStyle: const TextStyle(
           fontFamily: 'Inter',
           fontSize: 17,
           fontWeight: FontWeight.normal,
         ),
       ),
+      keyboardType: textInputType,
+      obscureText: isPass,
     );
   }
 }

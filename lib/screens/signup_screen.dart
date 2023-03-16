@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-
-import '../widgets/buttons.dart';
 import '../widgets/text_field_input.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class SignUpScreen extends StatelessWidget {
+  const SignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,61 +38,38 @@ class LoginScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     const TextFieldInput(
+                      labelText: "Username",
+                      textInputType: TextInputType.text,
+                      prefixIcon: Icon(Icons.person),
+                    ),
+                    const TextFieldInput(
                       labelText: "Email",
                       textInputType: TextInputType.emailAddress,
                       prefixIcon: Icon(Icons.email),
+                    ),
+                    const TextFieldInput(
+                      labelText: "Phone Number",
+                      textInputType: TextInputType.phone,
+                      prefixIcon: Icon(Icons.phone),
                     ),
                     const TextFieldInput(
                       labelText: "Password",
                       textInputType: TextInputType.text,
                       prefixIcon: Icon(Icons.lock),
                     ),
-
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        InkWell(
-                          child: Container(
-                            padding: const EdgeInsets.only(top: 10),
-                            child: const Text('Forgot Password?'),
-                          ),
-                        ),
-                      ],
+                    const TextFieldInput(
+                      labelText: "Confirm Password",
+                      textInputType: TextInputType.text,
+                      prefixIcon: Icon(Icons.lock),
                     ),
                     SizedBox(
                       height: size.height * 0.03,
                     ),
-                    const Buttons(),
-                    Container(
-                      padding: const EdgeInsets.only(top: 14),
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: const [
-                            Expanded(
-                              child: Divider(
-                                color: Colors.black,
-                                thickness: 1.5,
-                              ),
-                            ),
-                            Text(
-                              "or",
-                              style: TextStyle(fontSize: 16),
-                            ),
-                            Expanded(
-                                child: Divider(
-                              color: Colors.black,
-                              thickness: 1.5,
-                            )),
-                          ]),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
                     InkWell(
                       child: Container(
                         // width: double.infinity,
                         alignment: Alignment.center,
-                        padding: const EdgeInsets.symmetric(vertical: 12),
+                        padding: const EdgeInsets.symmetric(vertical: 16),
                         decoration: const BoxDecoration(
                           boxShadow: [
                             BoxShadow(
@@ -104,10 +79,10 @@ class LoginScreen extends StatelessWidget {
                             )
                           ],
                           borderRadius: BorderRadius.all(Radius.circular(14)),
-                          color: Colors.white,
+                          color: Color.fromRGBO(209, 83, 37, 1),
                         ),
                         child: const Text(
-                          "Sign in with Google",
+                          "Sign Up",
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.normal,
@@ -115,50 +90,25 @@ class LoginScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    InkWell(
-                      child: Container(
-                        // width: double.infinity,
-                        alignment: Alignment.center,
-                        padding: const EdgeInsets.symmetric(vertical: 12),
-                        decoration: const BoxDecoration(
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey,
-                              blurRadius: 10,
-                              offset: Offset(0, 5),
-                            )
-                          ],
-                          borderRadius: BorderRadius.all(Radius.circular(14)),
-                          color: Colors.blue,
-                        ),
-                        child: const Text(
-                          "Sign in with Facebook",
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.normal,
-                          ),
-                        ),
-                      ),
-                    ),
+
                     // Flexible(child: Container()),
 
                     SizedBox(
-                      height: size.height * 0.18,
+                      // This is causing a problem on smaller screens
+
+                      height: size.height * 0.1,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: const [
                           Text(
-                            "Don't have an account?",
+                            "Already have an account?",
                             style: TextStyle(fontSize: 16),
                           ),
                           Text(
                             "Sign Up",
                             style: TextStyle(
-                              fontSize: 16,
+                              fontSize: 18,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
