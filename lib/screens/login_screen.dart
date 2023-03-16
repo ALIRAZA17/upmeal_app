@@ -146,7 +146,7 @@ class LoginScreen extends StatelessWidget {
                     // Flexible(child: Container()),
 
                     SizedBox(
-                      height: size.height * 0.18,
+                      height: size.height * 0.1,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.end,
