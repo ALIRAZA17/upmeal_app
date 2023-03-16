@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:upmeal/practice/practice_screen.dart';
-import 'package:upmeal/practice/wre.dart';
 import 'package:upmeal/screens/login_screen.dart';
 
 void main() {
@@ -19,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyWidget(),
+      home: const LoginScreen(),
     );
   }
 }
